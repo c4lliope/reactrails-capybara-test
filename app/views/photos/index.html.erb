@@ -1,0 +1,10 @@
+<div id="prerendered" class="reactTest">
+
+(prerendered)
+<%= react_component("Greeting", {content: 'Set in Props'}, {prerender: true}) %>
+</div>
+
+<div id="rendered" class="reactTest">
+  (rendered on client)
+<%= react_component("Greeting", {content: 'Set in Props'}) %>
+</div>
