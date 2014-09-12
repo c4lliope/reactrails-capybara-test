@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'React rendering', :js do
-  before { visit photos_path }
+  before { visit root_path }
 
   context 'when prerendered' do
     let(:component) { find('#prerendered') }
