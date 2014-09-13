@@ -1,5 +1,7 @@
 # ReactJS callbacks fail on Capybara-webkit
 
+[![Build Status](https://travis-ci.org/graysonwright/reactrails-capybara-test.svg?branch=master)](https://travis-ci.org/graysonwright/reactrails-capybara-test)
+
 It would be great if they could play nicely together...
 
 As it is, some of the React callbacks aren't getting called. Check out the
