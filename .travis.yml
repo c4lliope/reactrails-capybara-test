@@ -1,20 +1,15 @@
-before_install:
-  - "echo '--colour' > ~/.rspec"
-  - "echo 'gem: --no-document' > ~/.gemrc"
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-before_script:
-  - cp .sample.env .env
-  
-  - psql -c 'create database "photos_test";' -U postgres
-  
-branches:
-  only:
-    - master
-cache:
-  - bundler
 language:
   - ruby
+before_install:
+  - "echo 'gem: --no-document' > ~/.gemrc"
+  - sudo apt-add-repository -y ppa:ubuntu-sdk-team/ppa
+  - sudo apt-get update
+  - sudo apt-get install libqt5webkit5-dev qtdeclarative5-dev qtlocation5-dev qtsensors5-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev qt4-default
+before_script:
+  - cp .sample.env .env
+  - psql -c 'create database "photos_test";' -U postgres
+cache:
+  - bundler
 notifications:
   email:
     - false
